@@ -16,11 +16,10 @@ StringCalculator.prototype.ExtractCustomDelimiter = function (input) {
     var DelimiterDescriptionPattern = /\/\/(.*)\n/;
     var Delimiters = input.match(DelimiterDescriptionPattern)[1];
 
-    var multipleDelimiterPattern = /\[.*]\[.*]/;
+    var multipleDelimiterPattern = /\[(.*?)\]/g;
     var multipleDelimiters = Delimiters.match(multipleDelimiterPattern);
-    console.log(multipleDelimiters);
 
-    return new RegExp(Delimiters.replace('][', ']|['));
+    return multipleDelimiters === null ? new RegExp(Delimiters) : new RegExp(multipleDelimiters.join('|'));
 };
 
 StringCalculator.prototype.getIllegalOperands = function (input) {
