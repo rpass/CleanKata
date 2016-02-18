@@ -20,3 +20,12 @@ Delimiters can be of any length with the following format:  “//[delimiter]\n�
 
 Allow multiple delimiters like this:  “//[delim1][delim2]\n” for example “//[*][%]\n1*2%3” should return 6.
 make sure you can also handle multiple delimiters with length longer than one char
+
+
+
+--- notes ---
+
+replace delims with ','s
+use filter
+try be less verbose (lang or sentences)
+stay away from oo js, just use functions
